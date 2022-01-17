@@ -1,6 +1,6 @@
 <template>
   <main>
-      <div class="row">
+    <div class="album">
         <Albums 
             v-for="(album, index) in albums"
             :key="index"
@@ -9,7 +9,7 @@
             :Author="album.author"
             :Year="album.year"
         />
-      </div>
+    </div>     
   </main>
 </template>
 
@@ -40,5 +40,19 @@ export default {
 </script>
 
 <style>
-
+    main {
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        background-color: #1E2D3B;
+    }
+    .album {
+        width: calc((100% / 2) - 10px);
+        margin:0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 3em;
+    }
 </style>
