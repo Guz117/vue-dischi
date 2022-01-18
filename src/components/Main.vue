@@ -62,7 +62,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
     main {
         width: 100%;
         height: 100vh;
