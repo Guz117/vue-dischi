@@ -40,8 +40,10 @@ export default {
             if (this.textSearch === '') {
                 return this.albums;
             }
-            return this.albums.filter((element) => element.genre.toLowerCase().includes(this.textSearch.toLowerCase()))
-        }
+            return this.albums.filter((element) => element.genre.toLowerCase().includes(this.textSearch.toLowerCase()));
+        },
+      
+        
     },
     mounted() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
@@ -56,7 +58,7 @@ export default {
     methods: {
         searchGenre(text) {
             console.log(text);
-            this.textSearch = text;
+            this.textSearch = text.trim();
         }
     }
 }
@@ -65,7 +67,7 @@ export default {
 <style lang="scss">
     main {
         width: 100%;
-        height: 100vh;
+        height: 120vh;
         margin: 0 auto;
         background-color: #1E2D3B;
     }
@@ -77,5 +79,12 @@ export default {
         flex-wrap: wrap;
         gap: 10px;
         padding-top: 3em;
+        padding-bottom: 10em;
+    }
+
+    @media screen and (min-width: 1600px) {
+        .album {
+            width: 50%;
+        }
     }
 </style>
